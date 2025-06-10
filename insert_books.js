@@ -5,10 +5,17 @@ const { MongoClient } = require('mongodb');
 
 // Connection URI (replace with your MongoDB connection string if using Atlas)
 const uri = 'mongodb://localhost:27017';
+const client = new MongoClient(uri);
+
 
 // Database and collection names
 const dbName = 'plp_bookstore';
 const collectionName = 'books';
+
+async function connectDB(){
+  await client.connect();
+  return client.db('plp_bookstore').collection('books');
+}
 
 // Sample book data
 const books = [
@@ -31,7 +38,7 @@ const books = [
     in_stock: true,
     pages: 328,
     publisher: 'Secker & Warburg'
-  },
+  }, 
   {
     title: 'The Great Gatsby',
     author: 'F. Scott Fitzgerald',
@@ -116,7 +123,7 @@ const books = [
     title: 'Moby Dick',
     author: 'Herman Melville',
     genre: 'Adventure',
-    published_year: 1851,
+    published_year: 1851, 
     price: 12.50,
     in_stock: false,
     pages: 635,
@@ -149,7 +156,7 @@ async function insertBooks() {
 
     // Check if collection already has documents
     const count = await collection.countDocuments();
-    if (count > 0) {
+    if (count > 0) { 
       console.log(`Collection already contains ${count} documents. Dropping collection...`);
       await collection.drop();
       console.log('Collection dropped successfully');
@@ -178,6 +185,9 @@ async function insertBooks() {
 // Run the function
 insertBooks().catch(console.error);
 
+//Queries to find all book in a specific genre
+
+//
 /*
  * Example MongoDB queries you can try after running this script:
  *

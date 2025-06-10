@@ -1,5 +1,5 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19695046&assignment_repo_type=AssignmentRepo)
-# MongoDB Fundamentals Assignment
+# MongoDB Fundamentals Assignment & Solution
 
 This assignment focuses on learning MongoDB fundamentals including setup, CRUD operations, advanced queries, aggregation pipelines, and indexing.
 
@@ -45,3 +45,22 @@ Your work will be automatically submitted when you push to your GitHub Classroom
 - [MongoDB Documentation](https://docs.mongodb.com/)
 - [MongoDB University](https://university.mongodb.com/)
 - [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+
+# Assignment Solution
+# MongoDB Fundamentals Assignment
+
+## Project Structure
+- `insert_books.js`: Script to populate the `plp_bookstore` database with sample book data.
+- `queries.js`: Contains all MongoDB CRUD operations, advanced queries, aggregation pipelines, and indexing.
+- `README.md`: Instructions for running the scripts.
+- `plp_bookstore.jpg`: Screenshot of MongoDB Compass showing the `books` collction.
+
+## Setup
+1. **Start MongoDB server locally** or set up a MongoDB Atlas cluster.
+2. **Insert books**:
+   ```bash
+   node insert_books.js
+3. Run queries:
+   Open mongosh and run:
+   load('queries.js')
+4. View your data using MongoDB Compass or run queries in mongosh 
